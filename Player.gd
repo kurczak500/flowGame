@@ -20,6 +20,7 @@ onready var background = get_node("../Control/TextureRect")
 func _ready():
 	screensize = get_viewport_rect().size
 	position = Vector2(640.0, 450.0)
+	var water = load("res://WaterInTank.tscn").instance()
 	
 func _physics_process(delta):
 	position += velocity
