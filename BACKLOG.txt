@@ -1,10 +1,5 @@
-
 - Detekcja kolizji beczki z asterodia
 - Uszkodzenie w wyniku kolizji beczki z asterodia + up³yw wody
-- Rury losowo pojawiaj¹ce siê na górze ekranu
 
 - Woda lej¹ca sie z rur
 - Nape³nianie zbiornika po "z³apaniu wody"
-
-
-- Poprawiæ wyglad zbiornika
