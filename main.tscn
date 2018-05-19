@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://stonog_tlo.jpg" type="Texture" id=2]
-[ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://tank.jpg" type="Texture" id=4]
+[ext_resource path="res://TextureRect.gd" type="Script" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://tank.jpg" type="Texture" id=5]
+[ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -48,6 +50,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
+script = ExtResource( 3 )
 
 [node name="Player" type="Area2D" parent="." index="1"]
 
@@ -58,14 +61,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 SPEED = 10
 
 [node name="Sprite" type="Sprite" parent="Player" index="0"]
 
-position = Vector2( 642.107, 520.561 )
 scale = Vector2( 0.6, 0.23 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
@@ -73,5 +75,35 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 642.11, 520.641 )
 scale = Vector2( 14.5282, 22.9178 )
 shape = SubResource( 1 )
+
+[node name="ScoreLabel" type="RichTextLabel" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1093.0
+margin_top = 11.0
+margin_right = 1267.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 8
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
 
 

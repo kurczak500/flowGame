@@ -2,10 +2,9 @@
 - Detekcja kolizji beczki z asterodia
 - Uszkodzenie w wyniku kolizji beczki z asterodia + up³yw wody
 - Rury losowo pojawiaj¹ce siê na górze ekranu
+
 - Woda lej¹ca sie z rur
 - Nape³nianie zbiornika po "z³apaniu wody"
-- Zmiana t³a po osiagnieciu roznego poziomu nape³nienia beczki
-- Blokada beczki (brak mozliwosci ucieczki poza ekran)
-- SCore 
-- Jak napelnimy zbiornik to koniec gry
+
+
 - Poprawiæ wyglad zbiornika
