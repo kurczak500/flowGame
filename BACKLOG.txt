@@ -1,5 +1,8 @@
-- Detekcja kolizji beczki z asterodia
-- Uszkodzenie w wyniku kolizji beczki z asterodia + up³yw wody
+- Detekcja kolizji beczki z asterodia 
+- Uszkodzenie w wyniku kolizji beczki z asterodia + up³yw wody -> gotowa fcja do eventu po wykryciu w player.gd
 
-- Woda lej¹ca sie z rur
-- Nape³nianie zbiornika po "z³apaniu wody"
+- Nape³nianie zbiornika po "z³apaniu wody" -> gotowa fcja do eventu po wykryciu w player.gd tylko wychwycic kolizje ze zbiornikiem
+
+- Game Over jak life < 1 -> czesciowo jest. jescze dodac jakis napis + wybor ze od nowa lub zakoncz w formie przyciskow czy cos wraz z wyswielteniem najlepszego wyniku sesji
+
+- dzwieki 
