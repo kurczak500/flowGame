@@ -1,6 +1,5 @@
 extends Area2D
 
-# class member variables go here, for example:
 export (int) var SPEED
 var screensize
 var velocity = Vector2()
@@ -26,7 +25,7 @@ func _physics_process(delta):
 	position += velocity
 	AcceptPosition()
 	scoreLabel.text = SCORE_LABEL + str(SCORE)
-	background.CheckBackground(LIFE)
+	background.CheckBackground(LIFE) #dodac tylko jak asteroida robi hita
 	
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -48,8 +47,3 @@ func AcceptPosition():
 		position -= velocity
 	if(position.y < 0 + SPRITE_SIZE_Y || position.y > Y_SIZE - SPRITE_SIZE_Y):
 		position -= velocity
-		
-func CheckBackground():
-	if(LIFE > 89):
-		pass
-		

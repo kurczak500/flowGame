@@ -1,4 +1,4 @@
-- Asteroidy losowao pojawiaja sie z boku
+
 - Detekcja kolizji beczki z asterodia
 - Uszkodzenie w wyniku kolizji beczki z asterodia + up³yw wody
 - Rury losowo pojawiaj¹ce siê na górze ekranu
