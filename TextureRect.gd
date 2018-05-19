@@ -2,11 +2,7 @@ extends TextureRect
 
 var STONOGA_BACK = []
 
-var lastNumber
-
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	LoadAllResources()
 
 #func _process(delta):
@@ -26,18 +22,18 @@ func LoadAllResources():
 		STONOGA_BACK.append(itex)
 		
 func CheckBackground(life):
-	if(life > 89 && texture != STONOGA_BACK[0]):
+	if(life >= 12 && texture != STONOGA_BACK[0]):
 		texture = STONOGA_BACK[0]
-	elif(life < 90 && life > 76 && texture != STONOGA_BACK[1]):
+	elif(life <= 11 && life >= 10 && texture != STONOGA_BACK[1]):
 		texture = STONOGA_BACK[1]
-	elif(life < 77 && life > 63 && texture != STONOGA_BACK[2]):
+	elif(life <= 9 && life >= 8 && texture != STONOGA_BACK[2]):
 		texture = STONOGA_BACK[2]
-	elif(life < 64 && life > 50 && texture != STONOGA_BACK[3]):
+	elif(life <= 7 && life >= 6 && texture != STONOGA_BACK[3]):
 		texture = STONOGA_BACK[3]
-	elif(life < 51 && life > 36 && texture != STONOGA_BACK[4]):
+	elif(life <= 5 && life >= 4 && texture != STONOGA_BACK[4]):
 		texture = STONOGA_BACK[4]
-	elif(life < 37 && life > 19 && texture != STONOGA_BACK[5]):
+	elif(life <= 3 && life >= 2 && texture != STONOGA_BACK[5]):
 		texture = STONOGA_BACK[5]
-	elif(life < 20 && texture != STONOGA_BACK[6]):
+	elif(life <= 1 && texture != STONOGA_BACK[6]):
 		texture = STONOGA_BACK[6]
 		

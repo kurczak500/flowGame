@@ -3,6 +3,8 @@ extends Node
 export (PackedScene) var Mob
 export (PackedScene) var Water
 
+var gameOver = false
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -11,7 +13,10 @@ func _ready():
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-	pass
+	if(gameOver):
+		get_node("WaterTimer").stop()
+		get_node("MobTimer").stop()
+		#dodac nowa scene z info o wyniku i czy jeszcze raz
 	
 
 
