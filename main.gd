@@ -3,7 +3,10 @@ extends Node
 export (PackedScene) var Mob
 export (PackedScene) var Water
 
-var gameOver = false
+#var gameOver = false
+#
+#onready var endGameLabel = get_node("EndGameLabel")
+#onready var player = get_node("Player")
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -13,11 +16,24 @@ func _ready():
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-	if(gameOver):
-		get_node("WaterTimer").stop()
-		get_node("MobTimer").stop()
-		#dodac nowa scene z info o wyniku i czy jeszcze raz
-	
+#	if(gameOver):		
+#		get_node("WaterTimer").stop()
+#		get_node("MobTimer").stop()
+#		endGameLabel.text = "<center>You collect " + str(player.score) + "</center>\n Please click enter to start new game"
+#		endGameLabel.visible = true
+#		#dodac nowa scene z info o wyniku i czy jeszcze raz
+#
+#
+#	if (gameOver && Input.is_action_pressed("ui_accept")):	
+#		endGameLabel.visible = false	
+#		player.score = 0
+#		player.life = 13
+#		player.AddWater(13, 0.0)
+#		player.position = Vector2(640.0, 450.0)
+#		gameOver = false
+#		get_node("WaterTimer").start()
+#		get_node("MobTimer").start()	
+	pass
 
 
 func _on_MobTimer_timeout():

@@ -66,8 +66,8 @@ func _physics_process(delta):
 	AcceptPosition()
 	
 func _process(delta):
-	if(get_node("../../main").gameOver):
-		return
+#	if(get_node("../../main").gameOver):
+#		return
 	
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):

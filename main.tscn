@@ -37,6 +37,7 @@ Water = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -72,6 +73,7 @@ script = ExtResource( 5 )
 
 [node name="Player" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -127,6 +129,7 @@ _sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Rect", "Size Flags
 
 [node name="MobPath" type="Path2D" parent="." index="3"]
 
+editor/display_folded = true
 curve = SubResource( 2 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
@@ -148,6 +151,7 @@ autostart = true
 
 [node name="WaterPath" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="WaterSpawLocation" type="PathFollow2D" parent="WaterPath" index="0"]
@@ -168,6 +172,37 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="EndGameLabel" type="RichTextLabel" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 264.0
+margin_top = 175.0
+margin_right = 523.0
+margin_bottom = 265.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/default_color = Color( 0, 0.0666667, 1, 1 )
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "custom_colors", "custom_styles" ]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
