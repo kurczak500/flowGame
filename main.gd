@@ -9,9 +9,8 @@ export (PackedScene) var Water
 #onready var player = get_node("Player")
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
+
 
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -59,3 +58,5 @@ func _on_WaterTimer_timeout():
 	water.set_rotation(direction)
 	
 	water.set_linear_velocity(Vector2(30,0).rotated(direction))
+
+

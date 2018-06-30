@@ -2,7 +2,7 @@
 
 [ext_resource path="res://raindrop.png" type="Texture" id=1]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 3.47783
@@ -41,7 +41,7 @@ angular_damp = -1.0
 
 position = Vector2( -0.270172, 0.270173 )
 scale = Vector2( 3.42228, 4.77318 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 

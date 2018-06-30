@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 export (int) var SPEED
 var screensize
 var velocity = Vector2()
@@ -51,16 +53,16 @@ func DropWater():
 	life -= 1
 	background.CheckBackground(life)
 	
-	if(life < 1):
-		get_node("../../main").gameOver = true
+#	if(life < 1):
+#		get_node("../../main").gameOver = true
 	
 func AddPoints(howMany):
 	score += howMany
 	scoreLabel.text = SCORE_LABEL + str(score)
 	
 func _physics_process(delta):
-	if(get_node("../../main").gameOver):
-		return
+#	if(get_node("../../main").gameOver):
+#		return
 	
 	position += velocity
 	AcceptPosition()
@@ -82,13 +84,22 @@ func _process(delta):
         velocity = velocity.normalized() * SPEED
 		
 		#testsss
-	if Input.is_action_just_released("ui_up"):
-		DropWater()
-	if Input.is_action_just_released("ui_down"):
-		AddWater(1, waterBars.size() * 10.0)
+#	if Input.is_action_just_released("ui_up"):
+#		DropWater()
+#	if Input.is_action_just_released("ui_down"):
+#		AddWater(1, waterBars.size() * 10.0)
 
 func AcceptPosition():
 	if(position.x < 0 + SPRITE_SIZE_X || position.x > X_SIZE - SPRITE_SIZE_X):
 		position -= velocity
 	if(position.y < 0 + SPRITE_SIZE_Y || position.y > Y_SIZE - SPRITE_SIZE_Y):
 		position -= velocity
+
+func _on_Player_body_entered(body):
+	if "Water" in body.get_name():
+#		print("Water")
+		AddWater(1, waterBars.size() * 10.0)
+	
+	if "Astero" in body.get_name():
+		DropWater()
+#		print("Astero")
