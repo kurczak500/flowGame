@@ -97,9 +97,10 @@ func AcceptPosition():
 
 func _on_Player_body_entered(body):
 	if "Water" in body.get_name():
-#		print("Water")
-		AddWater(1, waterBars.size() * 10.0)
+		if(body.get_position().y+50 < get_position().y):
+			AddWater(1, waterBars.size() * 10.0)
+			body.queue_free()
 	
-	if "Astero" in body.get_name():
+	elif "Astero" in body.get_name():		
 		DropWater()
-#		print("Astero")
+		body.queue_free()

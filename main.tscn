@@ -7,9 +7,9 @@
 [ext_resource path="res://TextureRect.gd" type="Script" id=5]
 [ext_resource path="res://Player.gd" type="Script" id=6]
 [ext_resource path="res://tank.png" type="Texture" id=7]
-[ext_resource path="res://ScoreLabel.gd" type="Script" id=8]
+[ext_resource path="res://Label.gd" type="Script" id=8]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -81,7 +81,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 6 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 SPEED = 10
 
 [node name="Sprite" type="Sprite" parent="Player" index="0"]
@@ -92,40 +92,31 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
 
-position = Vector2( -6.82618, 0.0556526 )
-scale = Vector2( 3.92488, 3.90352 )
-shape = SubResource( 4 )
+position = Vector2( -1.84854, 0.0556526 )
+scale = Vector2( 4.29012, 3.90352 )
+shape = SubResource( 1 )
 
-[node name="ScoreLabel" type="RichTextLabel" parent="." index="2"]
+[node name="Label" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1088.0
-margin_top = 8.0
-margin_right = 1182.0
-margin_bottom = 48.0
-rect_scale = Vector2( 2, 2 )
+margin_left = 592.0
+margin_top = 38.0
+margin_right = 783.0
+margin_bottom = 93.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 1
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
+size_flags_vertical = 4
+text = "Elo"
 percent_visible = 1.0
-meta_underlined = true
-tab_size = 8
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
+lines_skipped = 0
+max_lines_visible = -1
 script = ExtResource( 8 )
-_sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Rect", "Size Flags", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="MobPath" type="Path2D" parent="." index="3"]
 
@@ -151,7 +142,6 @@ autostart = true
 
 [node name="WaterPath" type="Path2D" parent="." index="5"]
 
-editor/display_folded = true
 curve = SubResource( 3 )
 
 [node name="WaterSpawLocation" type="PathFollow2D" parent="WaterPath" index="0"]

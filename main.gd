@@ -8,6 +8,8 @@ export (PackedScene) var Water
 #onready var endGameLabel = get_node("EndGameLabel")
 #onready var player = get_node("Player")
 
+var score = 0
+
 func _ready():
 	pass
 
@@ -46,6 +48,8 @@ func _on_MobTimer_timeout():
 	mob.set_rotation(direction)
 	
 	mob.set_linear_velocity(Vector2(rand_range(150,250),0). rotated(direction))
+	score += 1
+	$Label.text = "SCORE: " + str(score)
 
 
 func _on_WaterTimer_timeout():
