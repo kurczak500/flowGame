@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dziekuje.wav-8cce2f6ba9bf7016e10b561d6c5a96a7.sample"
+
+[deps]
+
+source_file="res://dziekuje.wav"
+dest_files=[ "res://.import/dziekuje.wav-8cce2f6ba9bf7016e10b561d6c5a96a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

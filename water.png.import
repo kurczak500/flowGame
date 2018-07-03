@@ -7,10 +7,7 @@ path="res://.import/water.png-7f2497dcc8f582a6653e5106ce5ecbe3.stex"
 [deps]
 
 source_file="res://water.png"
-source_md5="49bf6e91642b1392e8a808a175d7be52"
-
 dest_files=[ "res://.import/water.png-7f2497dcc8f582a6653e5106ce5ecbe3.stex" ]
-dest_md5="3bac4ac30127fc47f009521144214e43"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/stonoga3.jpg-d7bcccd7390f09ee7024428791302d91.stex"
 [deps]
 
 source_file="res://stonoga3.jpg"
-source_md5="8bd3b4d26eca6b80872de4705bd02e07"
-
 dest_files=[ "res://.import/stonoga3.jpg-d7bcccd7390f09ee7024428791302d91.stex" ]
-dest_md5="cff1c46b924bc32aa7fbe9b710de3d1b"
 
 [params]
 

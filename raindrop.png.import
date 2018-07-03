@@ -7,10 +7,7 @@ path="res://.import/raindrop.png-f307c399727543c6a1681f0f3b57bb9e.stex"
 [deps]
 
 source_file="res://raindrop.png"
-source_md5="3cf40d2d327525df9ded122088d615b9"
-
 dest_files=[ "res://.import/raindrop.png-f307c399727543c6a1681f0f3b57bb9e.stex" ]
-dest_md5="93efa1b0fb86fa4645db1ecdef8ff506"
 
 [params]
 

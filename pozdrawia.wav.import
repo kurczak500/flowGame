@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pozdrawia.wav-7e554d7b327cb5cc713b44691a6cb041.sample"
+
+[deps]
+
+source_file="res://pozdrawia.wav"
+dest_files=[ "res://.import/pozdrawia.wav-7e554d7b327cb5cc713b44691a6cb041.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

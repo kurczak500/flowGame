@@ -1,41 +1,43 @@
 extends Node
 
 export (PackedScene) var Mob
-export (PackedScene) var Water
+export (PackedScene) var Raindrop
 
-#var gameOver = false
-#
-#onready var endGameLabel = get_node("EndGameLabel")
-#onready var player = get_node("Player")
+var gameOver = false
 
 var score = 0
 
 func _ready():
+	randomize() #random seed
 	pass
-
 
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	if(gameOver):		
-#		get_node("WaterTimer").stop()
-#		get_node("MobTimer").stop()
-#		endGameLabel.text = "<center>You collect " + str(player.score) + "</center>\n Please click enter to start new game"
-#		endGameLabel.visible = true
-#		#dodac nowa scene z info o wyniku i czy jeszcze raz
-#
-#
-#	if (gameOver && Input.is_action_pressed("ui_accept")):	
-#		endGameLabel.visible = false	
-#		player.score = 0
-#		player.life = 13
-#		player.AddWater(13, 0.0)
-#		player.position = Vector2(640.0, 450.0)
-#		gameOver = false
-#		get_node("WaterTimer").start()
-#		get_node("MobTimer").start()	
 	pass
 
+func gameOver():
+	gameOver = true
+	killAll()
+	get_node("MobTimer").stop()
+	get_node("WaterTimer").stop()
+	get_node("Label").hide()
+	get_node("EndGameLabel").bbcode_text = "[center]Your score:[/center]\n [center]" + str(score) + "[/center]\n [center]Press enter to restart[/center]"
+	get_node("EndGameLabel").show()
+	
+func killAll():
+	for item in self.get_children():
+		var name = item.get_name()
+		if("Raindrop" in name || "Astero" in name):
+			item.queue_free()		
+
+func restartGame():
+	gameOver = false
+	score = 0
+	get_node("MobTimer").start()
+	get_node("WaterTimer").start()
+	get_node("EndGameLabel").hide()
+	get_node("Label").text = "Score: 0"
+	get_node("Label").show()
+	get_node("Player")._ready()
 
 func _on_MobTimer_timeout():
 	$MobPath/MobSpawnLocation.set_offset(randi())
@@ -51,10 +53,9 @@ func _on_MobTimer_timeout():
 	score += 1
 	$Label.text = "SCORE: " + str(score)
 
-
 func _on_WaterTimer_timeout():
 	$WaterPath/WaterSpawLocation.set_offset(randi())
-	var water = Water.instance()
+	var water = Raindrop.instance()
 	add_child(water)
 	water.set_position($WaterPath/WaterSpawLocation.position)
 	
@@ -62,5 +63,3 @@ func _on_WaterTimer_timeout():
 	water.set_rotation(direction)
 	
 	water.set_linear_velocity(Vector2(30,0).rotated(direction))
-
-

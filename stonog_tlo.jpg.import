@@ -7,10 +7,7 @@ path="res://.import/stonog_tlo.jpg-d298c213de26c44e267c3bb97ceed747.stex"
 [deps]
 
 source_file="res://stonog_tlo.jpg"
-source_md5="b4e83ba6ad8d443d60681204f942995e"
-
 dest_files=[ "res://.import/stonog_tlo.jpg-d298c213de26c44e267c3bb97ceed747.stex" ]
-dest_md5="e44bec00def81e02f7bea491b9eee231"
 
 [params]
 

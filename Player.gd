@@ -21,16 +21,22 @@ onready var background = get_node("../Control/TextureRect")
 
 var waterBars = []
 
+var gameOver = false
+
 func _ready():
 	screensize = get_viewport_rect().size
 	AddWater(13, 0.0)
 	position = Vector2(640.0, 450.0)	
 	life = 13
+	background.CheckBackground(life)
 	
 func AddWater(howMany, startPosition):
 	startPosition = 60.0 - startPosition
 	if (startPosition < -60.0):
 		return
+	
+	if(howMany == 1):	
+		get_node("..//dziekuje").play()
 	
 	if(howMany < 13):
 		life += howMany
@@ -45,7 +51,7 @@ func AddWater(howMany, startPosition):
 func DropWater():
 	var index = waterBars.size()
 	if(index < 1):
-		return
+		return			
 	
 	remove_child(waterBars[index - 1])
 	waterBars.remove(index - 1)
@@ -53,24 +59,22 @@ func DropWater():
 	life -= 1
 	background.CheckBackground(life)
 	
-#	if(life < 1):
-#		get_node("../../main").gameOver = true
+	if(life < 1):
+		get_node("..//pozdrawiam").play()
+		gameOver = true
+		get_node("../../main").gameOver()
+	else:
+		get_node("..//popsulosie").play()
 	
 func AddPoints(howMany):
 	score += howMany
 	scoreLabel.text = SCORE_LABEL + str(score)
 	
 func _physics_process(delta):
-#	if(get_node("../../main").gameOver):
-#		return
-	
 	position += velocity
 	AcceptPosition()
 	
 func _process(delta):
-#	if(get_node("../../main").gameOver):
-#		return
-	
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -83,12 +87,10 @@ func _process(delta):
 	if velocity.length() > 0:
         velocity = velocity.normalized() * SPEED
 		
-		#testsss
-#	if Input.is_action_just_released("ui_up"):
-#		DropWater()
-#	if Input.is_action_just_released("ui_down"):
-#		AddWater(1, waterBars.size() * 10.0)
-
+	if (gameOver && Input.is_action_pressed("ui_accept")):
+		gameOver = false
+		get_node("..//..//main").restartGame()
+		
 func AcceptPosition():
 	if(position.x < 0 + SPRITE_SIZE_X || position.x > X_SIZE - SPRITE_SIZE_X):
 		position -= velocity
@@ -96,7 +98,11 @@ func AcceptPosition():
 		position -= velocity
 
 func _on_Player_body_entered(body):
-	if "Water" in body.get_name():
+	if(gameOver):
+		body.queue_free()
+		return
+		
+	if "Raindrop" in body.get_name():
 		if(body.get_position().y+50 < get_position().y):
 			AddWater(1, waterBars.size() * 10.0)
 			body.queue_free()

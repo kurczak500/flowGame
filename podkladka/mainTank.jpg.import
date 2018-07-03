@@ -7,10 +7,7 @@ path="res://.import/mainTank.jpg-7e579735f403ad4f2875577edca65be5.stex"
 [deps]
 
 source_file="res://podkladka/mainTank.jpg"
-source_md5="63a9eb3a6bdf71a7763bed5bf1a26743"
-
 dest_files=[ "res://.import/mainTank.jpg-7e579735f403ad4f2875577edca65be5.stex" ]
-dest_md5="a44ab6456fe97b73df58295967c5c04e"
 
 [params]
 
