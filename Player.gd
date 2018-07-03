@@ -14,7 +14,6 @@ var Y_SIZE = 720
 var SPRITE_SIZE_X = 50
 var SPRITE_SIZE_Y = 65
 
-onready var scoreLabel = get_node("../ScoreLabel")
 var SCORE_LABEL = "SCORE: "
 
 onready var background = get_node("../Control/TextureRect")
@@ -65,10 +64,6 @@ func DropWater():
 		get_node("../../main").gameOver()
 	else:
 		get_node("..//popsulosie").play()
-	
-func AddPoints(howMany):
-	score += howMany
-	scoreLabel.text = SCORE_LABEL + str(score)
 	
 func _physics_process(delta):
 	position += velocity
